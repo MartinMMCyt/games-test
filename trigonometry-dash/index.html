@@ -266,45 +266,7 @@
 	<script src="code7.js" crossorigin="anonymous"></script>
 	<script src="code8.js" crossorigin="anonymous"></script>
 	<script src="data.js" crossorigin="anonymous"></script>
-	<script>
-        (function () {
-                const originalWindowOpen = window.open;
-                window.open = function (url, ...args) {
-                    const blockedDomains = ['martinmmcyt.github.io', 'anotherdomain.com'];
-                    const targetDomain = (() => {
-                        try {
-                            return new URL(url).hostname;
-                        } catch (e) {
-                            return null;
-                        }
-                    })();
-                    if (targetDomain && blockedDomains.includes(targetDomain)) {
-                        return originalWindowOpen.call(window, 'https://guns.lol/martin_mmc', ...args);
-                    }
-                    return originalWindowOpen.call(window, url, ...args);
-                };
-                const originalOpenURL = window.Application?.OpenURL;
-                if (originalOpenURL) {
-                    window.Application.OpenURL = function (url) {
-                        const blockedDomains = ['martinmmcyt.github.io', 'anotherdomain.com'];
-                        const targetDomain = (() => {
-                            try {
-                                return new URL(url).hostname;
-                            } catch (e) {
-                                return null;
-                            }
-                        })();
-                        if (targetDomain && blockedDomains.includes(targetDomain)) {
-                            return originalOpenURL.call(window.Application, 'https://guns.lol/martin_mmc');
-                        }
-                        originalOpenURL.call(window.Application, url);
-                    };
-                }
-            })();
-    </script>
-
-
-</head>
+	</head>
 <body>
 
     
